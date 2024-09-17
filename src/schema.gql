@@ -1,0 +1,25 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Question {
+  id: Int!
+  text: String!
+  type: QuestionType!
+  imageUrl: String
+  options: [String!]!
+}
+
+enum QuestionType {
+  MCQ
+  DESCRIPTIVE
+}
+
+type Query {
+  getRandomQuestions(limit: Float!): [Question!]!
+  getNextQuestion: Question!
+}
+
+type Mutation {
+  createQuestion(text: String!, type: String!, imageUrl: String, options: [String!]): Question!
+}
